@@ -1,0 +1,68 @@
+
+@font-face {
+  font-family: 'Neutra Text Alt';
+  src: url('../fonts/NeutraText-BookAlt.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/NeutraText-BookAlt.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/NeutraText-BookAlt.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/NeutraText-BookAlt.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/NeutraText-BookAlt.svg#790bf1ca2d6297f576439c0b32c6a271') format('svg'); /* Legacy iOS */
+
+  font-style:   normal;
+  font-weight:  400;
+}
+
+$font-stack: 'Neutra Text Alt', sans-serif;
+
+$font-size-base: 12px;
+$font-size-navigation: 16px;
+
+
+h1 {
+	font-size: 3.5 * $font-size-base;
+}
+h2 {
+	font-size: 3 * $font-size-base;
+}
+h3 {
+	font-size: 2.5 * $font-size-base;
+}
+h4 {
+	font-size: 2 * $font-size-base;
+}
+h5 {
+	font-size: 1.5 * $font-size-base;
+}
+h6 {
+	font-size: 1 * $font-size-base;
+}
+body {
+	font-family: $font-stack;
+	color: $color-light;
+	line-height: 1.5;
+	p {
+		margin-bottom: $length-medium;
+	}
+}
+a {
+	color: $brand-primary;
+	text-decoration: none;
+}
+
+// utility classes
+.text-right {
+	text-align: right;
+}
+.text-left {
+	text-align: left;
+}
+.text-center {
+	text-align: center;
+}
+
+// styling html style elements
+em {
+	font-style: italic;
+}
+strong {
+	font-weight: 800;
+}

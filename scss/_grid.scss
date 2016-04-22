@@ -1,0 +1,236 @@
+/*
+*
+* McGriddle v.03
+*
+* changelog
+* v.01 - Basic classes
+* v.02 - fixed breakpoint containers
+* v.03 - removed container breakpoints, added breakpoint mixin and reorganized grid file for better cascading
+*
+*/
+
+
+.one-eighth {
+	width: 12.5%;
+	float: left;
+	padding: 20px;
+}
+
+.three-eighths {
+	width: 37.5%;
+	float: left;
+	padding: 20px;
+}
+
+.five-eighths {
+	width: 62.5%;
+	float: left;
+	padding: 20px;
+}
+
+.seven-eighths {
+	width: 62.5%;
+	float: left;
+	padding: 20px;
+}
+
+.one-seventh {
+	width: 14.28%;
+	float: left;
+	padding: 20px;
+}
+
+.two-sevenths {
+	width: 28.57%;
+	float: left;
+	padding: 20px;
+}
+
+.three-sevenths {
+	width: 42.85%;
+	float: left;
+	padding: 20px;
+}
+
+.four-sevenths {
+	width: 57.1%;
+	float: left;
+	padding: 20px;
+}
+
+.five-sevenths {
+	width: 71.4%;
+	float: left;
+	padding: 20px;
+}
+
+.six-sevenths {
+	width: 85.7%;
+	float: left;
+	padding: 20px;
+}
+
+.one-sixth {
+	width: 16.66%;
+	float: left;
+	padding: 20px;
+}
+
+.five-sixths {
+	width: 83.33%;
+	float: left;
+	padding: 20px;
+}
+
+.one-fifth {
+	width: 20%;
+	float: left;
+	padding: 20px;
+}
+
+.two-fifths {
+	width: 40%;
+	float: left;
+	padding: 20px;
+}
+
+.three-fifths {
+	width: 60%;
+	float: left;
+	padding: 20px;
+}
+
+.four-fifths {
+	width: 80%;
+	float: left;
+	padding: 20px;
+}
+
+.one-fourth {
+	width: 25%;
+	float: left;
+	padding: 20px;
+}
+
+.three-fourths {
+	width: 50%;
+	float: left;
+	padding: 20px;
+}
+
+.one-third {
+	width: 33.33%;
+	float: left;
+	padding: 20px;
+}
+
+.two-thirds {
+	width: 66.66%;
+	float: left;
+	padding: 20px;
+}
+
+.one-half {
+	width: 50%;
+	float: left;
+	padding: 20px;
+}
+
+.one {
+	width: 100%;
+	float: left;
+	padding: 20px;
+}
+
+
+.clear {
+	clear: both;
+	float: none;
+}
+
+
+
+// shoutout to sitepoint for this handy-dandy mixin
+// http://www.sitepoint.com/managing-responsive-breakpoints-sass/
+$breakpoints: (
+  'phone'  			: (max-width: 767px),
+  'tablet'  		: (min-width: 768px) and (max-width: 1023px),
+  'handheld'		: (max-width: 1023px),
+  'computer'		: (min-width: 1024px),
+  'small-desktop' 	: (min-width: 1024px) and (max-width: 1223px),
+  'desktop'  		: (min-width: 1224px) and (max-width: 1823px),
+  'large-desktop' 	: (min-width: 1824px)
+);
+@mixin when-size-is($name) {
+  // If the key exists in the map
+  @if map-has-key($breakpoints, $name) {
+    // Prints a media query based on the value
+    @media #{inspect(map-get($breakpoints, $name))} {
+      @content;
+    }
+  }
+  // If the key doesn't exist in the map
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Please make sure it is defined in `$breakpoints` map.";
+  }
+}
+
+
+// containers and shit
+
+section, #wrap, .site-header {
+	padding-left: 12%;
+	padding-right: 12%;
+}
+@include when-size-is('large-desktop') {
+	section, #wrap, .site-header {
+		padding-left: 16%;
+		padding-right: 16%;
+	}
+}
+@include when-size-is('small-desktop') {
+	section, #wrap, .site-header {
+		padding-left: 6%;
+		padding-right: 6%;
+	}
+}
+@include when-size-is('handheld') {
+	// adjust grid classes to full width
+	.one-eighth, .three-eighths, .five-eighths, .seven-eighths, .one-seventh,
+	.two-sevenths, .three-sevenths, .four-sevenths, .five-sevenths, .six-sevenths,
+	.one-sixth, .five-sixths, .one-fifth, .two-fifths, .three-fifths, .four-fifths,
+	.one-fourth, .three-fourths, .one-third, .two-thirds, .one-half, .one {
+		width: 100%;
+	}
+	section, #wrap, .site-header {
+		padding-left: 6%;
+		padding-right: 6%;
+	}
+}
+
+// floaties
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+// padding killers
+.p0 {
+	padding: 0;
+}
+.pt0 {
+	padding-top: 0;
+}
+.pr0 {
+	padding-right: 0;
+}
+.pb0 {
+	padding-bottom: 0;
+}
+.pl0 {
+	padding-left: 0;
+}
