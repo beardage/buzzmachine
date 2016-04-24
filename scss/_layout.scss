@@ -1,3 +1,32 @@
+
+* {
+	 box-sizing: border-box;
+}
  body {
 	 background-color: $color-primary;
  }
+
+.hero {
+	.section-headline {
+		color: $color-variant-4;
+	}
+}
+
+.slot-container {
+	background-color: $color-variant-2;
+	padding: $length-medium;
+	.slot {
+		background-color: $color-variant-4;
+		border: 3px solid $color-variant-3;
+		padding: $length-medium;
+	}
+}
+.lever-container {
+	background-color: $color-variant-2;
+	padding: $length-medium;
+	.lever {
+		background-color: $color-variant-4;
+		border: 3px solid $color-variant-3;
+		padding: $length-medium;
+	}
+}
