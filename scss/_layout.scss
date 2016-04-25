@@ -27,7 +27,6 @@
 	.slot {
 		background-color: $color-light;
 		border: $length-small solid $color-variant-3;
-		padding: $length-medium;
 	}
 }
 .controls-container {
@@ -73,8 +72,17 @@
 	}
 }
 
-
-
 .slot {
-	min-height: 150px;
+	height: 300px;
+	text-align: center;
+	padding: 0;
+	.slot-item {
+		background-position: top;
+		background-size: cover;
+		height: 300px - $length-tiny - $length-tiny;
+		p {
+			margin: 0;
+		}
+
+	}
 }
