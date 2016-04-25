@@ -8,25 +8,61 @@
 
 .hero {
 	.section-headline {
-		color: $color-variant-4;
+		color: $color-dark;
+	}
+	.link {
+		color: $color-dark;
+		clear: right;
 	}
 }
 
-.slot-container {
+.machine-container {
 	background-color: $color-variant-2;
-	padding: $length-medium;
+	border-radius: $length-tiny;
+}
+
+.slot-container {
+	//background-color: $color-variant-2;
+	padding: 0;
 	.slot {
-		background-color: $color-variant-4;
-		border: 3px solid $color-variant-3;
+		background-color: $color-light;
+		border: $length-small solid $color-variant-3;
 		padding: $length-medium;
 	}
 }
 .lever-container {
-	background-color: $color-variant-2;
-	padding: $length-medium;
+	//background-color: $color-variant-2;
+	padding: 0 0 0 $length-medium;
 	.lever {
-		background-color: $color-variant-4;
+		background-color: $color-light;
+		border: $length-small solid $color-variant-3;
+		padding: $length-small;
+
+		width: 100%;
+		padding: $length-small;
+		font-family: $font-stack;
+		font-size: 1.5 * $font-size-base; // h5 size
+		text-transform: uppercase;
+		cursor: pointer;
+		&:hover {
+			background-color: $color-variant-1;
+		}
+		&:active, &:focus {
+			outline: none;
+		}
+	}
+}
+.message-container {
+	//background-color: $color-variant-2;
+	padding: 0 $length-medium $length-medium $length-medium;
+	.message {
+		background-color: $color-light;
 		border: 3px solid $color-variant-3;
 		padding: $length-medium;
 	}
+}
+
+
+.slot {
+	min-height: 150px;
 }
