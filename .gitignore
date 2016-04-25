@@ -1,2 +1,2 @@
-.codekit-cache
-.scss-cache
+.codekit-cache/*
+.scss-cache/*
