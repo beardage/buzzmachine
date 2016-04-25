@@ -30,13 +30,13 @@
 		padding: $length-medium;
 	}
 }
-.lever-container {
-	//background-color: $color-variant-2;
+.controls-container {
 	padding: 0 0 0 $length-medium;
 	.lever {
 		background-color: $color-light;
 		border: $length-small solid $color-variant-3;
 		padding: $length-small;
+		margin-bottom: $length-medium;
 
 		width: 100%;
 		padding: $length-small;
@@ -51,16 +51,28 @@
 			outline: none;
 		}
 	}
-}
-.message-container {
-	//background-color: $color-variant-2;
-	padding: 0 $length-medium $length-medium $length-medium;
-	.message {
-		background-color: $color-light;
-		border: 3px solid $color-variant-3;
+	.message-container {
+		background-color: $color-variant-2;
 		padding: $length-medium;
+		.message {
+			padding: 0;
+			text-align: center;
+			color: $color-dark;
+
+
+			img {
+				margin: 0 auto;
+			}
+			p {
+				margin-bottom: 0;
+			}
+		}
+		.message.message-result {
+			display: none;
+		}
 	}
 }
+
 
 
 .slot {
