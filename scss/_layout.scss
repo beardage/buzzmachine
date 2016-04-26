@@ -2,9 +2,26 @@
 * {
 	 box-sizing: border-box;
 }
- body {
+html {
+	height: 100%;
+}
+body {
 	 background-color: $color-primary;
- }
+	 height: 100%;
+	 margin: 0;
+	 padding: 0;
+}
+body.coffee-winner {
+
+}
+body.tea-winner {
+
+}
+body.espress-winner {
+	
+}
+
+
 
 .hero {
 	.section-headline {
@@ -19,6 +36,7 @@
 .machine-container {
 	background-color: $color-variant-2;
 	border-radius: $length-tiny;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 
 .slot-container {
@@ -27,7 +45,9 @@
 	.slot {
 		background-color: $color-light;
 		border: $length-small solid $color-variant-3;
+
 	}
+
 }
 .controls-container {
 	padding: 0 0 0 $length-medium;
