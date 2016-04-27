@@ -2,7 +2,7 @@
 // buzzmachine
 var buzzmachine = function(undefined){
 
-	var maxTime = 2500; // animation time, ms
+	var maxTime = 4000; // animation time, ms
 	var height = 840; // height of 3 slot items stacked
 	var slotSpeeds = []; // animation speed of slot roll
 	var result = []; // array of result topScrolls
@@ -38,9 +38,9 @@ var buzzmachine = function(undefined){
         $('.message-spin').show();
 
 		// get values for slot speeds and result array
-		for (var i = 0; i < 3; ++i) {
+		for (var i = 0; i < 3; i++) {
             // speed array
-			slotSpeeds[i] = Math.random() + 1;
+			slotSpeeds[i] = Math.random() + 1.5;
             // result array
 			result[i] = (Math.random() * 3 | 0) * height / 3;
 		}
@@ -51,12 +51,13 @@ var buzzmachine = function(undefined){
 	function animate(now){
         // if started is underfined, set started to now
 		if (!started) started = now;
+
 		var time = now - started || 0;
 
-		for (var i = 0; i < 3; ++i) {
+		for (var i = 0; i < 3; i++) {
             // Set the number of pixels scrolled.
             // spin and then scroll to result scrollTop
-			$slots[i].scrollTop = (slotSpeeds[i] / maxTime / 1.5 * (maxTime - time) * (maxTime - time) + result[i]) % height | 0;
+			$slots[i].scrollTop = (slotSpeeds[i] / maxTime / 1.3 * (maxTime - time) * (maxTime - time) + result[i]) % height | 0;
         }
 
         // if time not expired, animate next frame
@@ -72,7 +73,7 @@ var buzzmachine = function(undefined){
 
 	function checkWinner(){
         if (result[0] === result[1] && result[1] === result[2]) {
-            console.log('winner');
+
             // results match, now match result to item
             var sTop = result[0];
             switch (sTop) {
