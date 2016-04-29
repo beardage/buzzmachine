@@ -26,13 +26,19 @@
 			right: 0;
 			padding: 0;
 			background-color: $color-light;
+			box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 
+			//animations
 			transform: scale(0);
 			transform-origin: 100% 0%;
-			transition: transform 100ms ease-in-out;
-			li {
+			transition: all 100ms ease-in-out;
+			.subnav-item {
 				opacity: 0;
 				transition: opacity 100ms ease-in-out;
+				.sub-title {
+					font-size: .8em;
+					color: $color-muted;
+				}
 			}
 			a {
 				text-align: right;
