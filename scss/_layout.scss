@@ -37,6 +37,7 @@ body.espress-winner {
 	background-color: $color-variant-2;
 	border-radius: $length-tiny;
 	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+	margin-bottom: $length-large;
 }
 
 .slot-container {
@@ -49,7 +50,6 @@ body.espress-winner {
 		text-align: center;
 		padding: 0;
 		overflow: hidden;
-
 
 		.slot-item {
 			background-position: top;
@@ -68,11 +68,18 @@ body.espress-winner {
 				color: $color-dark;
 			}
 		}
+		@include when-size-is('handheld') {
+			width: 33.33%;
+			.slot-item img {
+				max-width: 80%;
+			}
+		}
 	}
 }
 
 .controls-container {
 	padding: 0 0 0 $length-medium;
+
 	.lever {
 		background-color: $color-light;
 		border: $length-small solid $color-variant-3;
@@ -93,6 +100,16 @@ body.espress-winner {
 		}
 		&:active, &:focus {
 			outline: none;
+		}
+
+	}
+	@include when-size-is('handheld') {
+		padding: 0;
+		.lever {
+			box-shadow: none;
+			&:hover {
+				box-shadow: none;
+			}
 		}
 	}
 	.message-container {
