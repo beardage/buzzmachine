@@ -45,10 +45,32 @@ body.espress-winner {
 	.slot {
 		background-color: $color-light;
 		border: $length-small solid $color-variant-3;
+		height: 300px;
+		text-align: center;
+		padding: 0;
+		overflow: hidden;
 
+
+		.slot-item {
+			background-position: top;
+			background-size: cover;
+			height: 280px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+			img {
+				max-width: 100px;
+			}
+			p {
+				margin: 0;
+				text-align: center;
+				color: $color-dark;
+			}
+		}
 	}
-
 }
+
 .controls-container {
 	padding: 0 0 0 $length-medium;
 	.lever {
@@ -91,29 +113,6 @@ body.espress-winner {
 		}
 		.message.message-result {
 			display: none;
-		}
-	}
-}
-
-.slot {
-	height: 300px;
-	text-align: center;
-	padding: 0;
-	overflow: hidden;
-
-
-	.slot-item {
-		background-position: top;
-		background-size: cover;
-		height: 280px;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		flex-direction: column;
-		p {
-			margin: 0;
-			text-align: center;
-			color: $color-dark;
 		}
 	}
 }

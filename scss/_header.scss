@@ -22,7 +22,7 @@
 			position: absolute;
 			list-style: none;
 
-			width: 300px;
+			width: 280px;
 			right: 0;
 			padding: 0;
 			background-color: $color-light;
@@ -45,10 +45,13 @@
 				&:hover {
 					background-color: $color-variant-5;
 				}
+				&:active {
+					background-color: $color-variant-3;
+				}
 			}
 		}
 		&:hover {
-			background-color: $color-variant-5;
+			background-color: $color-variant-3;
 		}
 		&:hover .sub-nav {
 			transform: scale(1);
