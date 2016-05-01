@@ -22,7 +22,7 @@ var buzzmachine = function(undefined){
 			slotItemArray = [];
 		});
 
-		$('button').on('click', spin);
+		$('.button-lever').on('click', spin);
 	}
 
 	function spin(){

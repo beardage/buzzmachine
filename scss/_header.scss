@@ -1,3 +1,15 @@
+
+.header {
+	.section-headline {
+		color: $color-dark;
+	}
+	.link {
+		color: $color-dark;
+		clear: right;
+	}
+}
+
+
 .nav {
 	float: right;
 	list-style: none;
@@ -60,5 +72,62 @@
 				opacity: 1;
 			}
 		}
+	}
+}
+
+// set up mobile navigation
+
+.menu-toggle {
+	display: none;
+	float: right;
+	position: relative;
+	overflow: hidden;
+	width: 40px;
+	height: 25px;
+
+	margin: $length-large 0;
+	padding: 0;
+	font-size: 0;
+	text-indent: -9999px;
+	background-color: transparent;
+	appearance: none;
+	box-shadow: none;
+	border-radius: 0;
+	border: none;
+	cursor: pointer;
+
+
+	span {
+		display: block;
+		position: absolute;
+		height: 5px;
+		width: 100%;
+		background: $color-variant-5;
+		border-radius: 4px;
+		left: 0;
+		&:nth-child(1) {
+			top: 0;
+		}
+		&:nth-child(2) {
+			top: 10px;
+		}
+		&:nth-child(3) {
+			top: 20px;
+		}
+	}
+	&:active, &:focus {
+		outline: none;
+	}
+
+}
+
+@include when-size-is('handheld') {
+	.menu-toggle {
+		display: block;
+	}
+	.nav {
+		transform: scale(0);
+		transform-origin: 100% 0%;
+		transition: transform 100ms ease-in-out;
 	}
 }
