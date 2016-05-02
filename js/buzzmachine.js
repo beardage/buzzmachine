@@ -57,7 +57,7 @@ var buzzmachine = function(undefined){
 		for (var i = 0; i < 3; i++) {
             // Set the number of pixels scrolled.
             // spin and then scroll to result scrollTop
-			$slots[i].scrollTop = (slotSpeeds[i] / maxTime / 1.3 * (maxTime - time) * (maxTime - time) + result[i]) % height | 0;
+			$slots[i].scrollTop = (slotSpeeds[i] / maxTime / 2 * (maxTime - time) * (maxTime - time) + result[i]) % height | 0;
         }
 
         // if time not expired, animate next frame
