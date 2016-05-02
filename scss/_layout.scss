@@ -113,13 +113,28 @@ body.espress-winner {
 
 			img {
 				margin: 0 auto;
+				max-width: 100px;
 			}
 			p {
 				margin-bottom: 0;
 			}
 		}
+		.message.message-spin {
+			img {
+				animation-name: spin;
+			    animation-duration: 4000ms;
+			    animation-iteration-count: infinite;
+			    animation-timing-function: linear;
+			}
+		}
 		.message.message-result {
 			display: none;
+			img {
+				animation-name: pulse;
+			    animation-duration: 4000ms;
+			    animation-iteration-count: infinite;
+			    animation-timing-function: linear;
+			}
 		}
 	}
 }
